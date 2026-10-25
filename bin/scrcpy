@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+project_dir=$(CDPATH= cd "$(dirname "$0")/.." && pwd)
+export ADB="$project_dir/bin/adb"
+export SCRCPY_SERVER_PATH="$project_dir/.tools/scrcpy-macos-x86_64-v5.0.1/scrcpy-server"
+exec "$project_dir/.tools/scrcpy-macos-x86_64-v5.0.1/scrcpy" "$@"
